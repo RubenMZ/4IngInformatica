@@ -1,5 +1,5 @@
 function texto=numeroletra(numero)
-abecedario='abcdefghijklmnÃ±opqrstuvwxyz';
+abecedario='abcdefghijklmnñopqrstuvwxyz';
 texto=[];
 for i=1:length(numero)
     x=numero(i)+1;

@@ -4,7 +4,7 @@ if (mod(d,1)~=0) || (mod(clave,1)~=0)
     return
 end
 numero = letranumero(texto);
-abecedario='abcdefghijklmnÃ±opqrstuvwxyz';
+abecedario='abcdefghijklmnñopqrstuvwxyz';
 
 if gcd(clave,length(abecedario))==1;
     aux = numero*clave + d;
