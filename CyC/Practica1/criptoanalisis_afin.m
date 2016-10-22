@@ -1,6 +1,6 @@
 function criptoanalisis_afin(v,n)
 abecedario='abcdefghijklmnñopqrstuvwxyz';
-%v='eymcklcdmgdcyescmeligvcqwbseiwycklevqgqwdgrlcldwveuiemwqwcrgvbmcipgevseiwycklevqgqwcscdelucgvnelyciwqzucl';
+v='eymcklcdmgdcyescmeligvcqwbseiwycklevqgqwdgrlcldwveuiemwqwcrgvbmcipgevseiwycklevqgqwcscdelucgvnelyciwqzucl';
 comparo=barras(v);
 option=1;
 i=1;
@@ -18,11 +18,10 @@ while (option==1)
     
     a = [x1 1; x2 1]
     
-    %Para ver si la matriz "a" es invertible
     A=mod(a,n);
     deter=round(mod(det(A),n));%porque gcd admite entradas enteras
-    [G, U, V]=gcd(n,deter);
-    if(G==1)
+    [G ,U ,V]=gcd(n,deter);
+    if(G==1)   % si det es primo relativo con m?dulo detrabajo
         inva = inv_modulo(a, 27)
 
         vector = [y1; y2]
@@ -43,6 +42,6 @@ while (option==1)
             disp('La clave no tiene mcd(clave,n)=1, probamos otra siguiente')
         end
     else
-        disp('La matriz no es invertible, probamos las siguientes frecuencias')
+        error('La matriz no es inversible modulo%d\n',m);
     end
 end
