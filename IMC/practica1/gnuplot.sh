@@ -6,6 +6,6 @@ set output "seno"
 set key right bottom
 set xlabel "Iteraciones"
 set ylabel "MSE"
-plot 'kk2.txt' using 1:2 t "sin2" w l,
+plot 'errores.txt' using 1:2 t "errorTrain" w l, 'errores.txt' using 1:3 t "errorTest" w l,
 
 _end_
