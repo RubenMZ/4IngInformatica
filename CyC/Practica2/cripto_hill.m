@@ -1,8 +1,8 @@
 function cripto_hill(textoclaro, textocifrado , orden)
 abecedario='abcdefghijklmnñopqrstuvwxyz';
 n = length(abecedario);
-textoclaro = 'enunlugardelamanchadecuyono';
-textocifrado = 'wvx idq ddo itq jgo gji ymg fvc uñt';
+%textoclaro = 'enunlugardelamanchadecuyono';
+%textocifrado = 'wvx idq ddo itq jgo gji ymg fvc uñt';
 %Creo los vectores de numeros a partir de los textos
 numeroClaro = letranumero(textoclaro);
 numeroCifrado = letranumero(textocifrado);

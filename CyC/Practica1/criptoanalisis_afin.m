@@ -1,6 +1,6 @@
 function criptoanalisis_afin(v,n)
 abecedario='abcdefghijklmnñopqrstuvwxyz';
-v='eymcklcdmgdcyescmeligvcqwbseiwycklevqgqwdgrlcldwveuiemwqwcrgvbmcipgevseiwycklevqgqwcscdelucgvnelyciwqzucl';
+%v='eymcklcdmgdcyescmeligvcqwbseiwycklevqgqwdgrlcldwveuiemwqwcrgvbmcipgevseiwycklevqgqwcscdelucgvnelyciwqzucl';
 comparo=barras(v);
 option=1;
 i=1;
