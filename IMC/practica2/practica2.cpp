@@ -94,7 +94,7 @@ int main(int argc, char **argv) {
     // Eta
     if (params.online)
     {
-        mlp.dEta = params.eta;
+        mlp.dEta= params.eta/mlp.nNumPatronesTrain;
     }else{
         mlp.dEta = params.eta/mlp.nNumPatronesTrain;
     }

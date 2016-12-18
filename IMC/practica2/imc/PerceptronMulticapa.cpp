@@ -520,6 +520,15 @@ double PerceptronMulticapa::test(Datos* pDatosTest, int funcionError, bool softm
 double PerceptronMulticapa::testClassification(Datos* pDatosTest, bool softmax){
 	double dAvgTestError = 0.0;
 
+	int matrix[pDatosTest->nNumPatrones][pDatosTest->nNumPatrones];
+	for (int i = 0; i < pDatosTest->nNumPatrones; ++i)
+	{
+		for (int j = 0; j < pDatosTest->nNumPatrones; ++j)
+		{
+			matrix[i][j]=0;
+		}
+	}
+
 	for(int i=0; i<pDatosTest->nNumPatrones; i++){
 		// Cargamos las entradas y propagamos el valor
 		double maxValue= 0.0, maxValueD = 0.0; 
@@ -548,8 +557,24 @@ double PerceptronMulticapa::testClassification(Datos* pDatosTest, bool softmax){
 		{
 			dAvgTestError += 1.0;
 		}
+
+		matrix[maxIndex][maxIndexD]++;
 		
 	}
+	/*
+
+	
+		for(int j = 0;j < pDatosTest->nNumSalidas; j++)
+		{
+			for(int k = 0; k < pDatosTest->nNumSalidas; k++)
+			{
+				if(k < pDatosTest->nNumSalidas-1)
+					cout << matrix[j][k] << "|" ;
+				else
+					cout << matrix[j][k] << endl ;
+			}
+		}
+*/
 
 	//cout<<"Clasificados = "<<dAvgTestError<<" de "<<pDatosTest->nNumPatrones<<endl;
 	dAvgTestError /= pDatosTest->nNumPatrones;
@@ -597,7 +622,8 @@ void PerceptronMulticapa::ejecutarAlgoritmo(Datos * pDatosTrain, Datos * pDatosT
 		countTrain++;
 
 		cout << "Iteración " << countTrain << "\t Error de entrenamiento: " << trainError << " y test: "<< testError<< endl;
-		salida<<countTrain<<" "<<trainError<<" "<<testError<<endl;
+		//salida<<countTrain<<" "<<trainError<<" "<<testError<<endl;
+		salida<<countTrain <<" "<< testClassification(pDatosTrain, softmax)<< " "<<testClassification(pDatosTest, softmax)<<endl;
 	} while ( countTrain<maxiter );
 
 	restaurarPesos();
