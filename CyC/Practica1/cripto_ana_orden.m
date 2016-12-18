@@ -1,5 +1,6 @@
 function [frecuencia, freordenada]=cripto_ana_orden(v)
-abecedario='abcdefghijklmnñopqrstuvwxyz';
+abecedario='abcdefghijklmnnopqrstuvwxyz';
+abecedario(15)=[char(241)];
 numero=letranumero(v);
 matrix = [];
 for i=1:length(abecedario)

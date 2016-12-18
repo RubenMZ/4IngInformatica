@@ -4,7 +4,8 @@ if (mod(d,1)~=0) || (mod(clave,1)~=0)
     return
 end
 numero = letranumero(texto);
-abecedario='abcdefghijklmnñopqrstuvwxyz';
+abecedario='abcdefghijklmnnopqrstuvwxyz';
+abecedario(15)=[char(241)];
 
 [G, U, V] = gcd(length(abecedario), clave);
 

@@ -1,19 +1,30 @@
 function criptoanalisis_afin(v,n)
-abecedario='abcdefghijklmnñopqrstuvwxyz';
+abecedario='abcdefghijklmnnopqrstuvwxyz';
+abecedario(15)=[char(241)];
 %v='eymcklcdmgdcyescmeligvcqwbseiwycklevqgqwdgrlcldwveuiemwqwcrgvbmcipgevseiwycklevqgqwcscdelucgvnelyciwqzucl';
 comparo=barras(v);
 option=1;
 i=1;
+j=2;
+x1 = comparo(1, 2);
+x2 = comparo(2, 2);
+length(v)
 while (option==1)
-    if( (i+1) >  length(v) )
+    if( j >  length(abecedario) && (i+1) > length(abecedario) )
         disp('No hay mas claves para probar');
         return
     else
-        x1 = comparo(i, 2);
+        if ( j > length(abecedario) )
+            i=i+1;
+            j=1;
+        else
+            if( j == i && (j+1) ~= length(abecedario) )
+                j=j+1;
+            end
+        end
         y1 = comparo(i, 4);
-        i = i+1;
-        x2 = comparo(i, 2);
-        y2 = comparo(i, 4);
+        y2 = comparo(j, 4);
+        j=j+1;
     end
     
     a = [x1 1; x2 1]
@@ -35,7 +46,7 @@ while (option==1)
         [G, U, V] = gcd(length(abecedario), k);
         if G==1;
             descifraafin=desafin(k, d, v)
-
+            %Condicional auxiliar para comparar con el inicio de la cadena
             prompt = 'si quieres probar otra clave introduce 1,en caso contrario introduce 0 -> ';
             option = input(prompt);
         else

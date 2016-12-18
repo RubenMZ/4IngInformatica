@@ -1,4 +1,5 @@
 function numero=letranumero(texto)
+%Pasa las letras a numeros, correspondiendo a la posicion del abecedario
 abecedario='abcdefghijklmnnopqrstuvwxyz';
 abecedario(15)=[char(241)];
 texto=lower(texto);
